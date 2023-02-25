@@ -16,7 +16,7 @@ It takes the input for :
 
 After taking the inputs from the user. It assigns the USN (University Seat Number) based on the year and branch mentioned by the enroller. 
 
-It also tells how much fees should be paid to CET/ COMED-K and Management students. (In this I have set the fees for CET/ COMED-K students as Rs. 86000 and for management students as Rs. 1,10,000). 
+It also tells how much fees should be paid to CET/ COMED-K and Management students. (In this I have set the fees for CET/ COMED-K students as Rs. 86,000 and for management students as Rs. 1,10,000). 
 
 After this, it asks how much fees can the student pay at the mode of admission and then shows the remaining fees.
 
