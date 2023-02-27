@@ -18,9 +18,10 @@ public class studentDatabase {
     private final String branch;
     private  final String adminWay;
     int totalPayment;
-    private int newId = 0;
+    private static int id = 0;
+    private String studentId;
     Scanner sc = new Scanner(System.in);
-    studentDatabase(){
+   public studentDatabase(){
         //Taking the input from the user
 
         System.out.println("Enter the first name: ");
@@ -46,7 +47,14 @@ public class studentDatabase {
         toPrint();
 
     }
+    private void setId(){
+       String defaultId = "2JI";
+       //defaultID + setYear() + branch + id
+        id++;
+        this.studentId = defaultId+setYear()+branch+id;
+        System.out.println("USN: " + studentId);
 
+    }
 
     //Creating toPrint() method to print
     public void toPrint(){
@@ -58,7 +66,7 @@ public class studentDatabase {
         whichAdmission();
         whichBranch();
         whichYear();
-        newUSN();
+        setId();
         toGender();
         int a = pay(adminWay);
         System.out.println("Your Total fees is: "+a);
@@ -126,24 +134,15 @@ public class studentDatabase {
             default -> 0;
         };
     }
-    public void newUSN(){
-
-        int a = setYear();
-        String defaultUSN = "2JI";
-        switch (branch) {
-            case "EC", "ME", "CS", "EE", "CV" ->
-                System.out.println("USN: " + defaultUSN + a + branch + ++newId);
-        }
-    }
 
     public void fees(int totalPayment, int toPay){
         int remainingFees = totalPayment - toPay;
-        System.out.println("You have paid: Rs. "+toPay);
+        System.out.println("You have paid: Rs. " +toPay);
         if(remainingFees == 0)
             System.out.println("No remaining fees");
+        else if(remainingFees < 0)
+            System.out.println("Error in payment input. Check the payment");
         else
             System.out.println("Your remaining fees is: Rs. "+remainingFees);
-
     }
-
 }
