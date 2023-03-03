@@ -127,10 +127,10 @@ public class studentDatabase {
     public int setYear(){
 
         return switch (year) {
-            case "First" -> 19;
-            case "Second" -> 20;
-            case "Third" -> 21;
-            case "Last" -> 22;
+            case "First" -> 22;
+            case "Second" -> 21;
+            case "Third" -> 20;
+            case "Last" -> 19;
             default -> 0;
         };
     }
